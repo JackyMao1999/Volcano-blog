@@ -1,10 +1,8 @@
-# default ignore
-.lightly
-.c_bin
-.classes
-logs
+.DS_Store
+Thumbs.db
+db.json
 *.log
-node_modules
-dist
-dist-ssr
-*.local
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml
