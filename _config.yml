@@ -15,7 +15,7 @@ timezone: Asia/Shanghai
 ## For GitHub Pages user site (username.github.io) or custom domain:  root: /
 ## For Vercel: root: /
 url: https://jackymao1999.github.io
-root: /Volcano-blog/
+root: /
 permalink: :year/:month/:day/:title/
 pretty_urls:
   trailing_index: false

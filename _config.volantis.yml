@@ -59,7 +59,7 @@ cover:
       url: /about/
     - name: GitHub
       icon: fab fa-github
-      url: https://github.com/jackymao
+      url: https://github.com/JackyMao1999
 
 # =============================== 颜色方案 - 西幻暗黑风 ===============================
 color_scheme:
@@ -170,7 +170,7 @@ sidebar:
       jinrishici: 魔法就在指尖流淌
       social:
         - icon: fab fa-github
-          url: https://github.com/jackymao
+          url: https://github.com/JackyMao1999
         - icon: fa-solid fa-envelope
           url: mailto:me@jackymao.com
         - icon: fa-solid fa-rss
@@ -237,8 +237,8 @@ site_footer:
   layout: [social, info, copyright]
   social:
     - icon: fab fa-github
-      url: https://github.com/jackymao
-  copyright: '[Copyright © 2024 JackyMao](/)'
+      url: https://github.com/JackyMao1999
+  copyright: '[Copyright © 2026 JackyMao](/)'
   br: '<br>'
 
 # =============================== 插件 ===============================
