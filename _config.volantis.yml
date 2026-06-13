@@ -1,7 +1,7 @@
-# =============================== Volantis 西幻风主题配置 ===============================
+# =============================== Volantis 羊皮纸主题配置 ===============================
 
 info:
-  theme_name: Volantis - 西幻风
+  theme_name: Volantis - 羊皮纸风
 
 # =============================== 默认占位图 ===============================
 default:
@@ -18,120 +18,123 @@ navbar:
   visiable: auto
   logo:
     img: false
-    icon: fa-solid fa-crown
+    icon: fa-solid fa-feather-alt
     title: JackyMao
   menu:
     - name: 首页
-      icon: fa-solid fa-dungeon
+      icon: fa-solid fa-home
       url: /
     - name: 归档
-      icon: fa-solid fa-scroll
+      icon: fa-solid fa-archive
       url: archives/
-    - name: 标签
-      icon: fa-solid fa-tags
-      url: tags/
-    - name: 关于我
-      icon: fa-solid fa-hat-wizard
+    - name: 分类
+      icon: fa-solid fa-folder-open
+      url: categories/
+    - name: 关于
+      icon: fa-solid fa-user
       url: about/
     - name: 友链
       icon: fa-solid fa-link
       url: friends/
-  search: 搜索咒语...
+  search: 搜索文章...
 
 # =============================== 封面 ===============================
 cover:
   height_scheme: full
-  layout_scheme: focus
+  layout_scheme: dock
   display:
     home: true
     archive: false
     others: false
   background: https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1920&h=1080&auto=format&fit=crop
   title: JackyMao's Page
-  subtitle: 在代码与魔法的交汇处
+  subtitle: 书写代码，记录思考
   search: 探寻古老的知识...
   features:
     - name: 博客
       icon: fa-solid fa-book-open
       url: /archives/
+    - name: 分类
+      icon: fa-solid fa-folder-open
+      url: /categories/
     - name: 关于
-      icon: fa-solid fa-hat-wizard
+      icon: fa-solid fa-user
       url: /about/
     - name: GitHub
       icon: fab fa-github
       url: https://github.com/JackyMao1999
 
-# =============================== 颜色方案 - 西幻暗黑风 ===============================
+# =============================== 颜色方案 - 羊皮纸质感 ===============================
 color_scheme:
   common:
-    theme: '#d4a843'
-    link: '#e6c873'
-    button: '#c9951e'
-    hover: '#f0d080'
-    inner: '#1a0a2e'
-    selection: 'alpha(#d4a843, 0.3)'
+    theme: '#8b3a3a'
+    link: '#5a7a9a'
+    button: '#8b3a3a'
+    hover: '#a05040'
+    inner: '#faf3e0'
+    selection: 'alpha(#8b3a3a, 0.15)'
   light:
-    site_bg: '#0d0221'
-    site_inner: '#e8d5b7'
-    site_footer: '#a89070'
-    card: '#15082e'
-    text: '#e8d5b7'
-    block: '#1e0f3a'
-    codeblock: '#1a0e30'
-    inlinecode: '#f0d080'
-    h1: '#f5e6c8'
-    h2: '#f5e6c8'
-    h3: '#e8d5b7'
-    h4: '#d4c4a8'
-    h5: '#c0b098'
-    h6: '#a89070'
-    p: '#e8d5b7'
-    list: '#d4c4a8'
-    list_hl: '#d4a843'
-    meta: '#a89070'
-    copyright_bkg: '#1e0f3a'
+    site_bg: '#e8dcc8'
+    site_inner: '#4a3520'
+    site_footer: '#7a6a5a'
+    card: '#faf3e0'
+    text: '#3c2415'
+    block: '#f0e6d0'
+    codeblock: '#2c1e10'
+    inlinecode: '#8b3a3a'
+    h1: '#2c1810'
+    h2: '#2c1810'
+    h3: '#3c2415'
+    h4: '#4a3520'
+    h5: '#5a4a3a'
+    h6: '#6a5a4a'
+    p: '#3c2415'
+    list: '#4a3520'
+    list_hl: '#8b3a3a'
+    meta: '#7a6a5a'
+    copyright_bkg: '#f0e6d0'
   dark:
-    site_bd: '#080018'
-    site_bg: '#0d0221'
-    card: '#120626'
-    site_inner: '#e8d5b7'
-    site_footer: '#a89070'
-    text: '#e8d5b7'
-    block: '#1a0a2e'
-    codeblock: '#0d0221'
-    inlinecode: '#f0d080'
-    h1: '#f5e6c8'
-    h2: '#f5e6c8'
-    h3: '#e8d5b7'
-    h4: '#d4c4a8'
-    h5: '#c0b098'
-    h6: '#a89070'
-    p: '#d9c9b0'
-    list: '#d4c4a8'
-    list_hl: '#d4a843'
-    meta: '#a89070'
-    copyright_bkg: '#1a0a2e'
-    brightness: 85%
+    site_bd: '#1a1410'
+    site_bg: '#2c2418'
+    card: '#3c3020'
+    site_inner: '#e8dcc8'
+    site_footer: '#8a7a6a'
+    text: '#d8ccb8'
+    block: '#4a3a28'
+    codeblock: '#1a1410'
+    inlinecode: '#c07050'
+    h1: '#f0e6d0'
+    h2: '#f0e6d0'
+    h3: '#e8dcc8'
+    h4: '#d8ccb8'
+    h5: '#b8a890'
+    h6: '#8a7a6a'
+    p: '#d8ccb8'
+    list: '#c8bca8'
+    list_hl: '#c07050'
+    meta: '#9a8a7a'
+    copyright_bkg: '#3c3020'
+    brightness: 90%
 
 # =============================== 自定义样式 ===============================
 custom_css:
   cursor:
     enable: false
   font_smoothing: true
-  max_width: 1200px
+  max_width: 1100px
   scrollbar:
     size: 6px
     border: 2px
-    background: '#2a1a4a linear-gradient(45deg, rgba(212, 168, 67, 0.3) 25%, transparent 25%, transparent 50%, rgba(212, 168, 67, 0.3) 50%, rgba(212, 168, 67, 0.3) 75%, transparent 75%, transparent)'
-    hover_background: '#3a2a5a linear-gradient(45deg, rgba(212, 168, 67, 0.5) 25%, transparent 25%, transparent 50%, rgba(212, 168, 67, 0.5) 50%, rgba(212, 168, 67, 0.5) 75%, transparent 75%, transparent)'
+    background: '#d4c4a8 linear-gradient(45deg, rgba(139, 58, 58, 0.15) 25%, transparent 25%, transparent 50%, rgba(139, 58, 58, 0.15) 50%, rgba(139, 58, 58, 0.15) 75%, transparent 75%, transparent)'
+    hover_background: '#c8b898 linear-gradient(45deg, rgba(139, 58, 58, 0.25) 25%, transparent 25%, transparent 50%, rgba(139, 58, 58, 0.25) 50%, rgba(139, 58, 58, 0.25) 75%, transparent 75%, transparent)'
   navbar:
     height: 64px
     width: max
-    effect: [shadow, floatable, blur]
+    effect: [shadow, floatable]
   sidebar:
-    effect: [shadow, floatable, blur]
+    effect: [shadow, floatable]
   body:
-    effect: [shadow, floatable, blur]
+    effect: [shadow, floatable]
     text_align:
       h1: left
       h2: left
@@ -139,17 +142,15 @@ custom_css:
       h4: left
       p: justify
   border_radius:
-    card: 12px
-    codeblock: 8px
-    searchbar: 12px
-    button: 6px
-  # Fonts are loaded via Google Fonts <link> in headEnd.ejs
-  # The theme's @font-face needs name/url for self-hosted fonts, leaving empty to avoid broken rules
+    card: 2px
+    codeblock: 0px
+    searchbar: 2px
+    button: 2px
   fontfamily:
     logofont:
-      fontfamily: '"Cinzel", "Varela Round", "PingFang SC", "Microsoft YaHei", serif'
+      fontfamily: '"Cormorant Garamond", "PingFang SC", "Microsoft YaHei", serif'
     bodyfont:
-      fontfamily: '"Cormorant Garamond", "Varela Round", "PingFang SC", "Microsoft YaHei", serif'
+      fontfamily: '"Cormorant Garamond", "PingFang SC", "Microsoft YaHei", serif'
     codefont:
       fontfamily: '"Fira Code", Menlo, Monaco, Consolas, monospace'
 
@@ -166,8 +167,8 @@ sidebar:
       shape: circle
       url: /about/
       title: JackyMao
-      subtitle: 代码巫师 · 奇幻旅者
-      jinrishici: 魔法就在指尖流淌
+      subtitle: 书写者 · 思考者
+      jinrishici: 纸上得来终觉浅
       social:
         - icon: fab fa-github
           url: https://github.com/JackyMao1999
@@ -202,14 +203,14 @@ sidebar:
       min_font: 14
       max_font: 24
       color: true
-      start_color: '#d4a843'
-      end_color: '#6a4e9a'
+      start_color: '#8b3a3a'
+      end_color: '#5a7a9a'
 
 # =============================== 文章布局 ===============================
 article:
   preview:
     scheme: landscape
-    pin_icon: fa-solid fa-crown
+    pin_icon: fa-solid fa-thumbtack
     auto_title: true
     auto_excerpt: true
     readmore: auto
@@ -221,6 +222,11 @@ article:
         enable: false
       donate:
         enable: false
+    meta_library:
+      author:
+        avatar: https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f9d9.png
+        name: JackyMao
+        url: /about/
 
 # =============================== 页面 ===============================
 pages:
@@ -229,7 +235,7 @@ pages:
 
 # =============================== 评论 ===============================
 comments:
-  title: <i class='fa-solid fa-comments'></i> 留下你的魔法印记
+  title: <i class='fa-solid fa-comments'></i> 留下你的想法
   service:
 
 # =============================== 页脚 ===============================

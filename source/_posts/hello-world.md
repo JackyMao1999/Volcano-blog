@@ -1,6 +1,10 @@
 ---
 title: Hello, 魔法世界
-tags: [Hexo, 博客]
+tags:
+  - Hexo
+  - 博客
+categories:
+  - 杂谈
 cover:
 ---
 
@@ -12,9 +16,9 @@ cover:
 
 **🎯 关于这个博客**
 
-这个博客使用 [Hexo](https://hexo.io/) 构建，搭载 [Volantis](https://volantis.js.org/) 主题，走西幻暗黑风路线。
+这个博客使用 [Hexo](https://hexo.io/) 构建，搭载 [Volantis](https://volantis.js.org/) 主题，走羊皮纸质感风格。
 
-如果你也喜欢这种风格，欢迎通过侧边栏的链接找到我。
+如果你也喜欢这种风格，欢迎通过侧面找到我。
 
 ---
 
@@ -23,6 +27,6 @@ cover:
 - Python 魔法技巧
 - 自动化工具分享
 - 开源项目踩坑记录
-- 奇幻与代码的跨界思考
+- 书写与代码的跨界思考
 
 敬请期待 ✨

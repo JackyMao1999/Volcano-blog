@@ -1,0 +1,68 @@
+<div id="music-container">
+  <button id="music-toggle" title="音乐播放器">
+    <i class="fa-solid fa-heart-pulse"></i>
+  </button>
+  <div id="music-player" hidden>
+    <div class="music-header">
+      <i class="fa-solid fa-music"></i>
+      <span>网易云音乐</span>
+      <button class="music-close">&times;</button>
+    </div>
+    <div class="music-body">
+      <iframe id="music-iframe" frameborder="no" allow="autoplay" sandbox="allow-scripts allow-same-origin"></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var container = document.getElementById('music-container');
+  var toggleBtn = document.getElementById('music-toggle');
+  var player = document.getElementById('music-player');
+  var iframe = document.getElementById('music-iframe');
+  var closeBtn = player.querySelector('.music-close');
+  var loaded = false;
+  var visible = false;
+
+  function loadPlayer() {
+    if (!loaded) {
+      iframe.src = 'https://music.163.com/outchain/player?type=2&id=1836021414&auto=1&height=66';
+      loaded = true;
+    }
+    var src = iframe.src;
+    iframe.src = '';
+    iframe.src = src;
+  }
+
+  function show() {
+    visible = true;
+    player.hidden = false;
+    loadPlayer();
+    toggleBtn.classList.add('active');
+    try { localStorage.setItem('music_visible', 'true'); } catch(e) {}
+  }
+
+  function hide() {
+    visible = false;
+    player.hidden = true;
+    toggleBtn.classList.remove('active');
+    try { localStorage.setItem('music_visible', 'false'); } catch(e) {}
+  }
+
+  toggleBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (visible) { hide(); } else { show(); }
+  });
+
+  closeBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    hide();
+  });
+
+  try {
+    if (localStorage.getItem('music_visible') === 'true') {
+      show();
+    }
+  } catch(e) {}
+})();
+</script>

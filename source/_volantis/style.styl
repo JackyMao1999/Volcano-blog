@@ -1,28 +1,34 @@
 // ===========================================
-//  西幻风自定义样式
-//  Western Fantasy Theme for Volantis
+//  羊皮纸质感自定义样式
+//  Paper Texture Theme for Volantis
 // ===========================================
 
 // -- Variables
-$gold = #d4a843
-$gold-light = #e6c873
-$gold-hover = #f0d080
-$gold-dim = rgba($gold, 0.15)
-$bg-deep = #0d0221
-$bg-card = #15082e
-$bg-block = #1a0e30
-$text-primary = #e8d5b7
-$text-heading = #f5e6c8
-$text-muted = #a89070
-$font-display = 'Cinzel', serif
+$ink = #3c2415
+$ink-dark = #2c1810
+$ink-muted = #7a6a5a
+$accent = #8b3a3a
+$accent-hover = #a05040
+$link = #5a7a9a
+$paper = #faf3e0
+$paper-light = #fcf8ee
+$paper-dark = #f0e6d0
+$paper-bg = #e8dcc8
+$font-display = 'Cormorant Garamond', serif
 $font-body = 'Cormorant Garamond', serif
 $font-code = 'Fira Code', monospace
 
+// SVG paper texture (subtle noise)
+$paper-texture = url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")
+
 // ===========================================
-//  星空背景
+//  页面背景 - 羊皮纸
 // ===========================================
+html
+  background: $paper-bg
+
 #l_body
-  background: linear-gradient(180deg, $bg-deep 0%, #1a0a2e 50%, $bg-deep 100%)
+  background: $paper-bg
   position: relative
 
   &::before
@@ -34,113 +40,108 @@ $font-code = 'Fira Code', monospace
     height: 100%
     pointer-events: none
     z-index: 0
-    background-image:
-      radial-gradient(1px 1px at 10% 20%, rgba($gold, 0.15), transparent),
-      radial-gradient(1px 1px at 30% 60%, rgba($gold, 0.10), transparent),
-      radial-gradient(1.5px 1.5px at 50% 10%, rgba(255, 255, 255, 0.12), transparent),
-      radial-gradient(1px 1px at 70% 40%, rgba($gold, 0.08), transparent),
-      radial-gradient(1px 1px at 90% 80%, rgba(255, 255, 255, 0.10), transparent),
-      radial-gradient(1.5px 1.5px at 20% 90%, rgba($gold, 0.12), transparent),
-      radial-gradient(1px 1px at 80% 15%, rgba(255, 255, 255, 0.08), transparent),
-      radial-gradient(1px 1px at 45% 45%, rgba($gold, 0.10), transparent),
-      radial-gradient(1.5px 1.5px at 65% 75%, rgba(255, 255, 255, 0.06), transparent),
-      radial-gradient(1px 1px at 15% 55%, rgba($gold, 0.10), transparent)
+    background-image: $paper-texture
 
   > *
     position: relative
     z-index: 1
 
 // ===========================================
-//  卡片 - 魔法 parchment 质感
+//  卡片 - 纸张质感
 // ===========================================
 .white-box
-  background: linear-gradient(135deg, rgba($bg-card, 0.95), rgba(#1e0f3a, 0.95))
-  border: 1px solid $gold-dim
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba($gold, 0.05)
-  backdrop-filter: blur(10px)
+  background: $paper
+  border: none
+  box-shadow: 0 1px 3px rgba($ink-dark, 0.08), 0 0 0 1px rgba($ink-dark, 0.03)
+  position: relative
+
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    pointer-events: none
+    background-image: $paper-texture
+    border-radius: inherit
 
 // ===========================================
 //  导航栏
 // ===========================================
 #l_header
-  background: linear-gradient(180deg, rgba($bg-deep, 0.9), rgba($bg-card, 0.85))
-  border-bottom: 1px solid rgba($gold, 0.2)
+  background: linear-gradient(180deg, rgba($paper, 0.95), rgba($paper-dark, 0.9))
+  border-bottom: 1px solid rgba($ink, 0.08)
 
   .logo a
-    font-weight: 700
-    color: $gold !important
-    text-shadow: 0 0 10px rgba($gold, 0.3)
+    font-weight: 600
+    color: $accent !important
 
   .nav-list a
-    color: $text-primary !important
-    transition: all 0.3s ease
+    color: $ink !important
+    transition: color 0.2s ease
 
     &:hover
-      color: $gold !important
-      text-shadow: 0 0 8px rgba($gold, 0.4)
+      color: $accent !important
 
 // ===========================================
 //  文章
 // ===========================================
 .article-title
-  color: $text-heading !important
+  color: $ink-dark !important
 
 .post-article, .post
   .article-entry
     font-size: 1.1rem
     line-height: 1.8
-    color: $text-primary
+    color: $ink
 
     h1, h2, h3, h4, h5, h6
-      color: $text-heading !important
-      text-shadow: 0 0 15px rgba($gold, 0.15)
+      color: $ink-dark !important
 
     h2
-      border-bottom: 1px solid rgba($gold, 0.2)
+      border-bottom: 1px solid rgba($ink, 0.1)
       padding-bottom: 8px
 
     a
-      color: $gold-light !important
+      color: $link !important
       text-decoration: none
-      border-bottom: 1px dotted rgba($gold-light, 0.3)
-      transition: all 0.3s ease
+      border-bottom: 1px dotted rgba($link, 0.3)
+      transition: color 0.2s ease
 
       &:hover
-        color: $gold-hover !important
-        border-bottom-color: $gold-hover
-        text-shadow: 0 0 8px rgba($gold-hover, 0.3)
+        color: darken($link, 15%) !important
+        border-bottom-color: $link
 
     blockquote
-      border-left: 3px solid $gold
-      background: rgba($gold, 0.05)
+      border-left: 3px solid $accent
+      background: rgba($accent, 0.04)
       padding: 12px 20px
       font-style: italic
-      color: #d4c4a8
+      color: $ink-muted
 
     pre
-      background: $bg-block !important
-      border: 1px solid $gold-dim
-      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3)
+      background: #2c1e10 !important
+      border: none
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2)
 
     code
-      color: $gold-hover
+      color: $accent-hover
 
     img
-      border-radius: 8px
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3)
+      border: 1px solid rgba($ink, 0.08)
 
     table
       border-collapse: collapse
       width: 100%
 
       th
-        background: rgba($gold, 0.15)
-        color: $text-heading
-        font-size: 0.95rem
-        border-bottom: 2px solid rgba($gold, 0.3)
+        background: rgba($ink, 0.06)
+        color: $ink-dark
+        border-bottom: 2px solid rgba($ink, 0.15)
 
       td, th
-        border: 1px solid $gold-dim
+        border: 1px solid rgba($ink, 0.08)
         padding: 8px 12px
 
 // ===========================================
@@ -148,103 +149,240 @@ $font-code = 'Fira Code', monospace
 // ===========================================
 #sidebar
   .sidebar-card
-    background: linear-gradient(135deg, rgba($bg-card, 0.95), rgba(#1e0f3a, 0.95))
-    border: 1px solid $gold-dim
+    background: $paper
+    border: none
+    position: relative
+
+    &::before
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      pointer-events: none
+      background-image: $paper-texture
+      border-radius: inherit
 
   .widget-title
-    color: $gold !important
+    color: $accent !important
 
   .blogger
     .avatar img
-      border: 2px solid rgba($gold, 0.3)
-      box-shadow: 0 0 15px rgba($gold, 0.2)
+      border: 2px solid rgba($ink, 0.1)
 
     .name
-      color: $text-heading !important
+      color: $ink-dark !important
 
     .subtitle
       font-style: italic
-      color: #d4c4a8
+      color: $ink-muted
 
 // ===========================================
 //  页脚
 // ===========================================
 #l_footer
-  border-top: 1px solid rgba($gold, 0.15)
-  color: $text-muted
+  border-top: 1px solid rgba($ink, 0.08)
+  color: $ink-muted
 
 // ===========================================
 //  组件样式
 // ===========================================
 
-// 标签云
 .tagcloud a
-  color: $gold !important
-  transition: all 0.3s ease
+  color: $accent !important
+  transition: color 0.2s ease
 
   &:hover
-    color: $gold-hover !important
-    text-shadow: 0 0 8px rgba($gold-hover, 0.3)
+    color: $accent-hover !important
 
-// 分类列表
 .category-list a
-  color: $text-primary !important
-  transition: all 0.3s ease
+  color: $ink !important
+  transition: color 0.2s ease
 
   &:hover
-    color: $gold !important
+    color: $accent !important
 
-// 按钮
 .btn
-  background: linear-gradient(135deg, $gold, #c9951e) !important
+  background: linear-gradient(135deg, $accent, darken($accent, 10%)) !important
   border: none !important
-  color: $bg-deep !important
-  box-shadow: 0 2px 10px rgba($gold, 0.3)
-  transition: all 0.3s ease !important
+  color: $paper !important
+  transition: all 0.2s ease !important
 
   &:hover
-    background: linear-gradient(135deg, $gold-light, $gold) !important
-    box-shadow: 0 4px 20px rgba($gold, 0.4)
+    background: linear-gradient(135deg, $accent-hover, $accent) !important
+    box-shadow: 0 2px 8px rgba($accent, 0.2)
     transform: translateY(-1px)
 
-// 分页
 .pagination
   .page-number.current
-    background: $gold !important
-    border-color: $gold !important
-    color: $bg-deep !important
+    background: $accent !important
+    border-color: $accent !important
+    color: $paper !important
 
   a:hover
-    color: $gold !important
+    color: $accent !important
 
-// 搜索框
 .s-search input
-  background: rgba(255, 255, 255, 0.05) !important
-  border: 1px solid rgba($gold, 0.2) !important
-  color: $text-primary !important
+  background: rgba($ink, 0.04) !important
+  border: 1px solid rgba($ink, 0.12) !important
+  color: $ink !important
+  border-radius: 2px !important
 
   &:focus
-    border-color: $gold !important
-    box-shadow: 0 0 10px rgba($gold, 0.2)
+    border-color: $accent !important
 
 // Cover
 #cover .cover-info
   .cover-title
-    text-shadow: 0 0 20px rgba($gold, 0.3)
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
 
   .cover-subtitle
     font-style: italic
 
 // ===========================================
+//  文章列表 - 卡片装饰线
+// ===========================================
+.post-wrapper .post
+  border-left: 3px solid transparent
+  transition: border-color 0.2s ease
+
+  &:hover
+    border-left-color: $accent
+
+// ===========================================
+//  标签/分类页面
+// ===========================================
+#tag, #cat
+  h2
+    border: none !important
+    font-size: 1.4rem
+    margin-bottom: 1rem
+
+  .all-tags a, .all-cats a
+    display: inline-block
+    padding: 4px 12px
+    margin: 4px
+    background: rgba($accent, 0.06)
+    border: 1px solid rgba($accent, 0.12)
+    color: $ink !important
+    transition: all 0.2s ease
+
+    &:hover
+      background: rgba($accent, 0.12)
+      border-color: $accent
+      color: $accent !important
+
+// ===========================================
+//  音乐播放器 - 悬浮按钮 + 折叠面板
+// ===========================================
+#music-container
+  position: fixed
+  bottom: 24px
+  right: 24px
+  z-index: 999
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+  gap: 8px
+
+// 悬浮按钮
+#music-toggle
+  width: 44px
+  height: 44px
+  border-radius: 50%
+  border: none
+  background: $accent
+  color: $paper
+  font-size: 1.2rem
+  cursor: pointer
+  box-shadow: 0 2px 8px rgba($accent, 0.3)
+  transition: all 0.25s ease
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 2
+  position: relative
+
+  &:hover
+    background: $accent-hover
+    box-shadow: 0 4px 14px rgba($accent, 0.4)
+    transform: scale(1.08)
+
+  &.active
+    background: $accent-hover
+    animation: music-pulse 2s ease-in-out infinite
+
+// 播放器面板
+#music-player
+  background: $paper
+  border: 1px solid rgba($ink, 0.1)
+  box-shadow: 0 4px 20px rgba($ink, 0.12)
+  width: 320px
+  overflow: hidden
+  animation: music-slide-in 0.3s ease
+
+  &[hidden]
+    display: none
+
+  .music-header
+    display: flex
+    align-items: center
+    padding: 8px 12px
+    background: rgba($accent, 0.06)
+    border-bottom: 1px solid rgba($ink, 0.08)
+    font-size: 0.85rem
+    color: $ink
+
+    i
+      margin-right: 6px
+      color: $accent
+
+    span
+      flex: 1
+
+    .music-close
+      background: none
+      border: none
+      font-size: 1.2rem
+      cursor: pointer
+      color: $ink-muted
+      padding: 0 2px
+      line-height: 1
+
+      &:hover
+        color: $accent
+
+  .music-body
+    iframe
+      width: 100%
+      height: 66px
+      display: block
+
+@keyframes music-slide-in
+  from
+    opacity: 0
+    transform: translateY(12px) scale(0.95)
+  to
+    opacity: 1
+    transform: translateY(0) scale(1)
+
+@keyframes music-pulse
+  0%, 100%
+    box-shadow: 0 2px 8px rgba($accent, 0.3)
+  50%
+    box-shadow: 0 2px 16px rgba($accent, 0.6)
+
+// ===========================================
 //  滚动条
 // ===========================================
 ::-webkit-scrollbar-track
-  background: $bg-deep
+  background: $paper-bg
 
 ::-webkit-scrollbar-thumb
-  background: linear-gradient(180deg, $gold, #c9951e)
+  background: rgba($ink, 0.2)
   border-radius: 3px
 
 *
   scrollbar-width: thin
-  scrollbar-color: $gold $bg-deep
+  scrollbar-color: rgba($ink, 0.2) $paper-bg
