@@ -1,0 +1,301 @@
+# =============================== Volantis 西幻风主题配置 ===============================
+info:
+  theme_name: Volantis - 西幻风
+
+# 默认占位图
+default:
+  avatar: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png
+  cover: https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg
+  image: https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg
+
+# CSP - 简化，允许外部资源
+csp:
+  enable: false
+
+# =============================== 导航栏 ===============================
+navbar:
+  visiable: auto
+  logo:
+    img: false
+    icon: fa-solid fa-crown
+    title: JackyMao
+  menu:
+    - name: 首页
+      icon: fa-solid fa-dungeon
+      url: /
+    - name: 归档
+      icon: fa-solid fa-scroll
+      url: archives/
+    - name: 标签
+      icon: fa-solid fa-tags
+      url: tags/
+    - name: 关于我
+      icon: fa-solid fa-hat-wizard
+      url: about/
+    - name: 友链
+      icon: fa-solid fa-link
+      url: friends/
+  search: 搜索咒语...
+
+# =============================== 封面 ===============================
+cover:
+  height_scheme: full
+  layout_scheme: focus
+  display:
+    home: true
+    archive: false
+    others: false
+  background: https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1920&h=1080&auto=format&fit=crop
+  title: JackyMao's Page
+  subtitle: 在代码与魔法的交汇处
+  search: 探寻古老的知识...
+  features:
+    - name: 博客
+      icon: fa-solid fa-book-open
+      url: /archives/
+    - name: 关于
+      icon: fa-solid fa-hat-wizard
+      url: /about/
+    - name: GitHub
+      icon: fab fa-github
+      url: https://github.com/jackymao
+
+# =============================== 颜色方案 - 西幻暗黑风 ===============================
+color_scheme:
+  common:
+    theme: '#d4a843'
+    link: '#e6c873'
+    button: '#c9951e'
+    hover: '#f0d080'
+    inner: '#1a0a2e'
+    selection: 'alpha(#d4a843, 0.3)'
+  light:
+    site_bg: '#0d0221'
+    site_inner: '#e8d5b7'
+    site_footer: '#a89070'
+    card: '#15082e'
+    text: '#e8d5b7'
+    block: '#1e0f3a'
+    codeblock: '#1a0e30'
+    inlinecode: '#f0d080'
+    h1: '#f5e6c8'
+    h2: '#f5e6c8'
+    h3: '#e8d5b7'
+    h4: '#d4c4a8'
+    h5: '#c0b098'
+    h6: '#a89070'
+    p: '#e8d5b7'
+    list: '#d4c4a8'
+    list_hl: '#d4a843'
+    meta: '#a89070'
+    copyright_bkg: '#1e0f3a'
+  dark:
+    site_bd: '#080018'
+    site_bg: '#0d0221'
+    card: '#120626'
+    site_inner: '#e8d5b7'
+    site_footer: '#a89070'
+    text: '#e8d5b7'
+    block: '#1a0a2e'
+    codeblock: '#0d0221'
+    inlinecode: '#f0d080'
+    h1: '#f5e6c8'
+    h2: '#f5e6c8'
+    h3: '#e8d5b7'
+    h4: '#d4c4a8'
+    h5: '#c0b098'
+    h6: '#a89070'
+    p: '#d9c9b0'
+    list: '#d4c4a8'
+    list_hl: '#d4a843'
+    meta: '#a89070'
+    copyright_bkg: '#1a0a2e'
+    brightness: 85%
+
+# =============================== 自定义样式 ===============================
+custom_css:
+  cursor:
+    enable: false
+  font_smoothing: true
+  max_width: 1200px
+  scrollbar:
+    size: 6px
+    border: 2px
+    background: '#2a1a4a linear-gradient(45deg, rgba(212, 168, 67, 0.3) 25%, transparent 25%, transparent 50%, rgba(212, 168, 67, 0.3) 50%, rgba(212, 168, 67, 0.3) 75%, transparent 75%, transparent)'
+    hover_background: '#3a2a5a linear-gradient(45deg, rgba(212, 168, 67, 0.5) 25%, transparent 25%, transparent 50%, rgba(212, 168, 67, 0.5) 50%, rgba(212, 168, 67, 0.5) 75%, transparent 75%, transparent)'
+  navbar:
+    height: 64px
+    width: max
+    effect: [shadow, floatable, blur]
+  sidebar:
+    effect: [shadow, floatable, blur]
+  body:
+    effect: [shadow, floatable, blur]
+    highlight:
+      language: true
+      grayscale: false
+    text_align:
+      h1: left
+      h2: left
+      h3: left
+      h4: left
+      p: justify
+  gap:
+    h2: 48px
+    h3: 24px
+    h4: 16px
+    p: 1em
+    line_height: 1.6
+  border_radius:
+    card: 12px
+    codeblock: 8px
+    searchbar: 12px
+    button: 6px
+  fontsize:
+    root: 17px
+    h1: 1.6rem
+    h2: 1.5rem
+    h3: 1.25rem
+    h4: 1.125rem
+    h5: 1rem
+    h6: 1rem
+    list: .9375rem
+    meta: .875rem
+    code: .8125rem
+    footnote: .78125rem
+  fontfamily:
+    logofont:
+      fontfamily: '"Cinzel", "Varela Round", "PingFang SC", "Microsoft YaHei", serif'
+      name: 'Cinzel'
+      url: https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap
+      weight: 700
+      style: normal
+    bodyfont:
+      fontfamily: '"Cormorant Garamond", "Varela Round", "PingFang SC", "Microsoft YaHei", serif'
+      name: 'Cormorant Garamond'
+      url: https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap
+      weight: 400
+      style: normal
+    codefont:
+      fontfamily: '"Fira Code", Menlo, Monaco, Consolas, monospace'
+      name: 'Fira Code'
+      url: https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap
+
+# =============================== 侧边栏 ===============================
+sidebar:
+  position: right
+  for_page: [blogger, category, tagcloud]
+  for_post: [toc]
+  widget_library:
+    blogger:
+      class: blogger
+      display: [desktop, mobile]
+      avatar: https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f9d9.png
+      shape: circle
+      url: /about/
+      title: JackyMao
+      subtitle: 代码巫师 · 奇幻旅者
+      jinrishici: 魔法就在指尖流淌
+      social:
+        - icon: fab fa-github
+          url: https://github.com/jackymao
+        - icon: fa-solid fa-envelope
+          url: mailto:me@jackymao.com
+        - icon: fa-solid fa-rss
+          url: /atom.xml
+    toc:
+      class: toc
+      display: [desktop, mobile]
+      sticky: true
+      header:
+        icon: fa-solid fa-list
+        title: 本文目录
+      list_number: false
+      min_depth: 2
+      max_depth: 5
+    category:
+      class: category
+      display: [desktop]
+      header:
+        icon: fa-solid fa-folder-open
+        title: 文章分类
+        url: /categories/
+    tagcloud:
+      class: tagcloud
+      display: [desktop, mobile]
+      header:
+        icon: fa-solid fa-tags
+        title: 热门标签
+        url: /tags/
+      min_font: 14
+      max_font: 24
+      color: true
+      start_color: '#d4a843'
+      end_color: '#6a4e9a'
+
+# =============================== 文章布局 ===============================
+article:
+  preview:
+    scheme: landscape
+    pin_icon: fa-solid fa-crown
+    auto_title: true
+    auto_excerpt: true
+    hide_excerpt: false
+    line_style: solid
+    author: false
+    readmore: auto
+  body:
+    top_meta: [author, category, date, counter]
+    bottom_meta: [updated, tags]
+    footer_widget:
+      copyright:
+        enable: false
+      donate:
+        enable: false
+
+# =============================== 页面 ===============================
+pages:
+  friends:
+    layout_scheme: traditional
+
+# =============================== 评论 ===============================
+comments:
+  title: <i class='fa-solid fa-comments'></i> 留下你的魔法印记
+  subtitle:
+  service: # 暂时关闭评论
+
+# =============================== 页脚 ===============================
+site_footer:
+  layout: [social, info, copyright]
+  social:
+    - icon: fab fa-github
+      url: https://github.com/jackymao
+  copyright: '[Copyright © 2024 JackyMao](/)'
+  br: '<br>'
+
+# =============================== 插件 ===============================
+plugins:
+  preload:
+    enable: true
+    service: flying_pages
+  lazyload:
+    enable: true
+    onlypost: false
+    blurIn: true
+  code_highlight: highlightjs
+  highlightjs:
+    copy_code: true
+  pjax:
+    enable: true
+    cover: true
+    timeout: 5000
+    cacheBust: false
+    animation: nprogress
+
+# =============================== 搜索 ===============================
+search:
+  enable: true
+  service: hexo
+
+# =============================== 自定义内联样式 ===============================
+# This section adds custom CSS inline via the theme's injection mechanism
