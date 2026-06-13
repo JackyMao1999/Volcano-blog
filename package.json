@@ -1,12 +1,17 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "jackymao-blog",
+  "version": "1.0.0",
   "private": true,
+  "description": "JackyMao's Blog - 西幻风个人博客",
+  "author": "JackyMao",
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
+    "clean:public": "rm -rf public",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "docker:build": "docker build -t jackymao-blog .",
+    "docker:run": "docker run -p 4000:4000 jackymao-blog"
   },
   "hexo": {
     "version": "7.1.1"
@@ -21,7 +26,6 @@
     "hexo-renderer-marked": "^6.0.0",
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-server": "^3.0.0",
-    "hexo-theme-landscape": "^1.0.0",
     "hexo-theme-volantis": "^5.8.0"
   }
 }

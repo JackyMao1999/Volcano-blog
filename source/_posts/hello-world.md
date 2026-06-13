@@ -1,38 +1,28 @@
 ---
-title: Hello World
+title: Hello, 魔法世界
+tags: [Hexo, 博客]
+cover:
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+欢迎来到 **JackyMao's Page**！
 
-### Create a new post
+这是我的第一篇博客，一个新的开始。这里将记录我在编程世界中的冒险故事、学习心得和一些有趣的项目。
 
-``` bash
-$ hexo new "My New Post"
-```
+---
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+**🎯 关于这个博客**
 
-### Run server
+这个博客使用 [Hexo](https://hexo.io/) 构建，搭载 [Volantis](https://volantis.js.org/) 主题，走西幻暗黑风路线。
 
-``` bash
-$ hexo server
-```
+如果你也喜欢这种风格，欢迎通过侧边栏的链接找到我。
 
-More info: [Server](https://hexo.io/docs/server.html)
+---
 
-### Generate static files
+**📝 即将发布的内容**
 
-``` bash
-$ hexo generate
-```
+- Python 魔法技巧
+- 自动化工具分享
+- 开源项目踩坑记录
+- 奇幻与代码的跨界思考
 
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+敬请期待 ✨

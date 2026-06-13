@@ -1,14 +1,15 @@
 # =============================== Volantis 西幻风主题配置 ===============================
+
 info:
   theme_name: Volantis - 西幻风
 
-# 默认占位图
+# =============================== 默认占位图 ===============================
 default:
   avatar: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png
   cover: https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg
   image: https://gcore.jsdelivr.net/gh/MHG-LAB/cron@gh-pages/bing/bing.jpg
 
-# CSP - 简化，允许外部资源
+# CSP
 csp:
   enable: false
 
@@ -131,55 +132,26 @@ custom_css:
     effect: [shadow, floatable, blur]
   body:
     effect: [shadow, floatable, blur]
-    highlight:
-      language: true
-      grayscale: false
     text_align:
       h1: left
       h2: left
       h3: left
       h4: left
       p: justify
-  gap:
-    h2: 48px
-    h3: 24px
-    h4: 16px
-    p: 1em
-    line_height: 1.6
   border_radius:
     card: 12px
     codeblock: 8px
     searchbar: 12px
     button: 6px
-  fontsize:
-    root: 17px
-    h1: 1.6rem
-    h2: 1.5rem
-    h3: 1.25rem
-    h4: 1.125rem
-    h5: 1rem
-    h6: 1rem
-    list: .9375rem
-    meta: .875rem
-    code: .8125rem
-    footnote: .78125rem
+  # Fonts are loaded via Google Fonts <link> in headEnd.ejs
+  # The theme's @font-face needs name/url for self-hosted fonts, leaving empty to avoid broken rules
   fontfamily:
     logofont:
       fontfamily: '"Cinzel", "Varela Round", "PingFang SC", "Microsoft YaHei", serif'
-      name: 'Cinzel'
-      url: https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap
-      weight: 700
-      style: normal
     bodyfont:
       fontfamily: '"Cormorant Garamond", "Varela Round", "PingFang SC", "Microsoft YaHei", serif'
-      name: 'Cormorant Garamond'
-      url: https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap
-      weight: 400
-      style: normal
     codefont:
       fontfamily: '"Fira Code", Menlo, Monaco, Consolas, monospace'
-      name: 'Fira Code'
-      url: https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap
 
 # =============================== 侧边栏 ===============================
 sidebar:
@@ -240,9 +212,6 @@ article:
     pin_icon: fa-solid fa-crown
     auto_title: true
     auto_excerpt: true
-    hide_excerpt: false
-    line_style: solid
-    author: false
     readmore: auto
   body:
     top_meta: [author, category, date, counter]
@@ -261,8 +230,7 @@ pages:
 # =============================== 评论 ===============================
 comments:
   title: <i class='fa-solid fa-comments'></i> 留下你的魔法印记
-  subtitle:
-  service: # 暂时关闭评论
+  service:
 
 # =============================== 页脚 ===============================
 site_footer:
@@ -289,13 +257,9 @@ plugins:
     enable: true
     cover: true
     timeout: 5000
-    cacheBust: false
     animation: nprogress
 
 # =============================== 搜索 ===============================
 search:
   enable: true
   service: hexo
-
-# =============================== 自定义内联样式 ===============================
-# This section adds custom CSS inline via the theme's injection mechanism

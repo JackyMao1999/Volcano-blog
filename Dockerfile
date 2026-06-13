@@ -1,14 +1,21 @@
-FROM m.daocloud.io/docker.io/library/node:20-alpine
+# ---- Build Stage ----
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
 RUN npm install -g hexo-cli
 
-COPY package.json package-lock.json* yarn.lock* ./
-RUN npm install
+COPY package.json package-lock.json* ./
+RUN npm ci --only=production
 
 COPY . .
+RUN npm run build
 
-EXPOSE 4000
+# ---- Production Stage ----
+FROM nginx:stable-alpine
 
-CMD ["npm", "run", "server", "--", "--host", "0.0.0.0"]
+COPY --from=builder /app/public /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

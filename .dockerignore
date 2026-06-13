@@ -2,4 +2,14 @@ node_modules/
 public/
 .git/
 .gitignore
-*.md
+db.json
+*.log
+.env
+.env.local
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+README.md
+yarn.lock
