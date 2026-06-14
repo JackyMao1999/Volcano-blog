@@ -1,0 +1,8 @@
+- group: 🔗 友情链接
+  description: 我的朋友们
+  items:
+    - title: Kai Mao's Pages
+      url: https://jackymao1999.github.io
+      avatar: https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f9d9.png
+      keywords: [Python, Blog]
+      description: 代码与魔法的交汇处

@@ -1,68 +1,133 @@
-<div id="music-container">
-  <button id="music-toggle" title="音乐播放器">
-    <i class="fa-solid fa-heart-pulse"></i>
-  </button>
-  <div id="music-player" hidden>
-    <div class="music-header">
-      <i class="fa-solid fa-music"></i>
-      <span>网易云音乐</span>
-      <button class="music-close">&times;</button>
-    </div>
-    <div class="music-body">
-      <iframe id="music-iframe" frameborder="no" allow="autoplay" sandbox="allow-scripts allow-same-origin"></iframe>
+<style>
+/* 非封面页：导航栏始终可见 */
+#l_body:not(:has(#cover)) ~ #l_header.auto {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+/* 封面页：完全隐藏导航栏 */
+#l_body:has(#cover) ~ #l_header {
+  display: none !important;
+}
+</style>
+
+<div id="pet-rabbit">
+  <div class="pet-body">
+    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="60" cy="80" rx="28" ry="24" fill="#8B6914"/>
+      <ellipse cx="60" cy="84" rx="18" ry="14" fill="#C4A265"/>
+      <circle cx="60" cy="50" r="20" fill="#8B6914"/>
+      <ellipse cx="46" cy="54" rx="8" ry="6" fill="#A0783C"/>
+      <ellipse cx="74" cy="54" rx="8" ry="6" fill="#A0783C"/>
+      <ellipse cx="60" cy="56" rx="7" ry="5" fill="#C4A265"/>
+      <ellipse cx="60" cy="54" rx="2.5" ry="2" fill="#5C4018"/>
+      <circle cx="51" cy="47" r="3.5" fill="#1a1a1a"/>
+      <circle cx="52" cy="46" r="1.2" fill="#fff"/>
+      <circle cx="69" cy="47" r="3.5" fill="#1a1a1a"/>
+      <circle cx="70" cy="46" r="1.2" fill="#fff"/>
+      <ellipse class="ear-left" cx="43" cy="28" rx="6" ry="14" fill="#8B6914" transform="rotate(-15, 43, 28)"/>
+      <ellipse class="ear-left" cx="43" cy="28" rx="3.5" ry="10" fill="#C4A265" transform="rotate(-15, 43, 28)"/>
+      <ellipse class="ear-right" cx="77" cy="28" rx="6" ry="14" fill="#8B6914" transform="rotate(15, 77, 28)"/>
+      <ellipse class="ear-right" cx="77" cy="28" rx="3.5" ry="10" fill="#C4A265" transform="rotate(15, 77, 28)"/>
+      <ellipse cx="44" cy="90" rx="6" ry="4" fill="#8B6914"/>
+      <ellipse cx="76" cy="90" rx="6" ry="4" fill="#8B6914"/>
+      <circle cx="34" cy="82" r="6" fill="#C4A265"/>
+      <line x1="48" y1="55" x2="30" y2="52" stroke="#5C4018" stroke-width="0.6"/>
+      <line x1="48" y1="57" x2="28" y2="58" stroke="#5C4018" stroke-width="0.6"/>
+      <line x1="72" y1="55" x2="90" y2="52" stroke="#5C4018" stroke-width="0.6"/>
+      <line x1="72" y1="57" x2="92" y2="58" stroke="#5C4018" stroke-width="0.6"/>
+    </svg>
+    <div class="pet-name">小糯米</div>
+  </div>
+  <div class="pet-bubble" hidden></div>
+
+  <div class="pet-menu">
+    <div class="pet-menu-item music-item">
+      <button id="pet-music-btn">
+        <i class="fa-solid fa-play"></i>
+        <span>音乐播放</span>
+      </button>
+      <div id="pet-music-tooltip" hidden>
+        <i class="fa-solid fa-music"></i>
+        <span class="song-name">加载中...</span>
+      </div>
     </div>
   </div>
 </div>
 
+<audio id="pet-music-audio" preload="none"></audio>
+
 <script>
 (function() {
-  var container = document.getElementById('music-container');
-  var toggleBtn = document.getElementById('music-toggle');
-  var player = document.getElementById('music-player');
-  var iframe = document.getElementById('music-iframe');
-  var closeBtn = player.querySelector('.music-close');
-  var loaded = false;
-  var visible = false;
+  var SONG_ID = '1836021414';
+  var SONG_NAME = '黄金时代';
+  var SONG_ARTIST = '声音碎片乐队';
 
-  function loadPlayer() {
-    if (!loaded) {
-      iframe.src = 'https://music.163.com/outchain/player?type=2&id=1836021414&auto=1&height=66';
-      loaded = true;
-    }
-    var src = iframe.src;
-    iframe.src = '';
-    iframe.src = src;
+  // --- 兔子 ---
+  var pet = document.getElementById('pet-rabbit');
+  var bubble = pet.querySelector('.pet-bubble');
+  var timer;
+  function say(text) {
+    bubble.textContent = text;
+    bubble.hidden = false;
+    clearTimeout(timer);
+    timer = setTimeout(function() { bubble.hidden = true; }, 2000);
   }
-
-  function show() {
-    visible = true;
-    player.hidden = false;
-    loadPlayer();
-    toggleBtn.classList.add('active');
-    try { localStorage.setItem('music_visible', 'true'); } catch(e) {}
-  }
-
-  function hide() {
-    visible = false;
-    player.hidden = true;
-    toggleBtn.classList.remove('active');
-    try { localStorage.setItem('music_visible', 'false'); } catch(e) {}
-  }
-
-  toggleBtn.addEventListener('click', function(e) {
+  pet.querySelector('.pet-body').addEventListener('click', function(e) {
     e.stopPropagation();
-    if (visible) { hide(); } else { show(); }
+    pet.classList.remove('pet-hop');
+    void pet.offsetWidth;
+    pet.classList.add('pet-hop');
+    var msgs = ['🐰 嗯？', '🐰 干嘛呀', '🐰 抱抱~', '🐰 好吃吗', '🐰 困了zzz'];
+    say(msgs[Math.floor(Math.random() * msgs.length)]);
+  });
+  setInterval(function() {
+    if (Math.random() > 0.7) {
+      pet.classList.remove('pet-ear-twitch');
+      void pet.offsetWidth;
+      pet.classList.add('pet-ear-twitch');
+      setTimeout(function() { pet.classList.remove('pet-ear-twitch'); }, 500);
+    }
+  }, 4000);
+
+  // --- 音乐 ---
+  var musicBtn = document.getElementById('pet-music-btn');
+  var tooltip = document.getElementById('pet-music-tooltip');
+  var songNameEl = tooltip.querySelector('.song-name');
+  var audio = document.getElementById('pet-music-audio');
+  var playing = false;
+  var songInfo = SONG_NAME + ' - ' + SONG_ARTIST;
+
+  function playMusic() {
+    audio.src = '/music/' + SONG_ID + '.mp3';
+    audio.play();
+  }
+
+  function stopMusic() {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+
+  musicBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (playing) {
+      playing = false;
+      musicBtn.innerHTML = '<i class="fa-solid fa-play"></i><span>音乐播放</span>';
+      musicBtn.classList.remove('playing');
+      stopMusic();
+    } else {
+      playing = true;
+      musicBtn.innerHTML = '<i class="fa-solid fa-pause"></i><span>暂停</span>';
+      musicBtn.classList.add('playing');
+      songNameEl.textContent = songInfo;
+      playMusic();
+    }
   });
 
-  closeBtn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    hide();
+  musicBtn.addEventListener('mouseenter', function() {
+    if (songInfo) { tooltip.hidden = false; }
   });
-
-  try {
-    if (localStorage.getItem('music_visible') === 'true') {
-      show();
-    }
-  } catch(e) {}
+  musicBtn.addEventListener('mouseleave', function() {
+    tooltip.hidden = true;
+  });
 })();
 </script>

@@ -11,12 +11,8 @@ $accent = #8b3a3a
 $accent-hover = #a05040
 $link = #5a7a9a
 $paper = #faf3e0
-$paper-light = #fcf8ee
 $paper-dark = #f0e6d0
 $paper-bg = #e8dcc8
-$font-display = 'Cormorant Garamond', serif
-$font-body = 'Cormorant Garamond', serif
-$font-code = 'Fira Code', monospace
 
 // SVG paper texture (subtle noise)
 $paper-texture = url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")
@@ -274,104 +270,186 @@ html
       color: $accent !important
 
 // ===========================================
-//  音乐播放器 - 悬浮按钮 + 折叠面板
+//  桌宠 - 侏儒兔小糯米（含弹出菜单）
 // ===========================================
-#music-container
+#pet-rabbit
   position: fixed
-  bottom: 24px
-  right: 24px
-  z-index: 999
-  display: flex
-  flex-direction: column
-  align-items: flex-end
-  gap: 8px
+  bottom: 20px
+  left: 24px
+  z-index: 998
 
-// 悬浮按钮
-#music-toggle
-  width: 44px
-  height: 44px
-  border-radius: 50%
-  border: none
-  background: $accent
-  color: $paper
-  font-size: 1.2rem
-  cursor: pointer
-  box-shadow: 0 2px 8px rgba($accent, 0.3)
-  transition: all 0.25s ease
-  display: flex
-  align-items: center
-  justify-content: center
-  z-index: 2
-  position: relative
+  // --- 兔子主体 ---
+  .pet-body
+    width: 80px
+    height: 80px
+    cursor: pointer
+    position: relative
+    transition: transform 0.15s ease
 
-  &:hover
-    background: $accent-hover
-    box-shadow: 0 4px 14px rgba($accent, 0.4)
-    transform: scale(1.08)
+    &:hover
+      transform: scale(1.05)
 
-  &.active
-    background: $accent-hover
-    animation: music-pulse 2s ease-in-out infinite
+    svg
+      width: 100%
+      height: 100%
+      display: block
+      filter: drop-shadow(0 2px 4px rgba($ink, 0.1))
 
-// 播放器面板
-#music-player
-  background: $paper
-  border: 1px solid rgba($ink, 0.1)
-  box-shadow: 0 4px 20px rgba($ink, 0.12)
-  width: 320px
-  overflow: hidden
-  animation: music-slide-in 0.3s ease
-
-  &[hidden]
-    display: none
-
-  .music-header
-    display: flex
-    align-items: center
-    padding: 8px 12px
-    background: rgba($accent, 0.06)
-    border-bottom: 1px solid rgba($ink, 0.08)
-    font-size: 0.85rem
-    color: $ink
-
-    i
-      margin-right: 6px
-      color: $accent
-
-    span
-      flex: 1
-
-    .music-close
-      background: none
-      border: none
-      font-size: 1.2rem
-      cursor: pointer
+    .pet-name
+      text-align: center
+      font-size: 0.65rem
       color: $ink-muted
-      padding: 0 2px
-      line-height: 1
+      margin-top: -2px
+
+    // 耳朵动画
+    .ear-left, .ear-right
+      transition: transform 0.2s ease
+      transform-origin: center bottom
+
+  &.pet-ear-twitch .ear-left
+    transform: rotate(-25deg) !important
+
+  &.pet-ear-twitch .ear-right
+    transform: rotate(25deg) !important
+
+  &.pet-hop .pet-body
+    animation: pet-hop 0.5s ease
+
+  // 呼吸动画
+  .pet-body
+    animation: pet-breathe 3s ease-in-out infinite
+
+  // --- 气泡对话框 ---
+  .pet-bubble
+    position: absolute
+    bottom: 90px
+    left: 50%
+    transform: translateX(-50%)
+    background: $paper
+    border: 1px solid rgba($ink, 0.15)
+    padding: 4px 10px
+    font-size: 0.75rem
+    white-space: nowrap
+    color: $ink
+    box-shadow: 0 1px 4px rgba($ink, 0.08)
+    animation: pet-bubble-in 0.25s ease
+
+    &::after
+      content: ""
+      position: absolute
+      bottom: -5px
+      left: 50%
+      margin-left: -4px
+      border-left: 5px solid transparent
+      border-right: 5px solid transparent
+      border-top: 5px solid $paper
+
+  // --- 弹出菜单 ---
+  .pet-menu
+    position: absolute
+    bottom: 100px
+    left: 0
+    min-width: 160px
+    background: $paper
+    border: 1px solid rgba($ink, 0.1)
+    box-shadow: 0 4px 16px rgba($ink, 0.12)
+    opacity: 0
+    visibility: hidden
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease
+    transform: translateY(8px)
+
+  &:hover .pet-menu
+    opacity: 1
+    visibility: visible
+    transform: translateY(0)
+
+  .pet-menu-item
+    padding: 6px 10px
+
+    button
+      display: flex
+      align-items: center
+      gap: 8px
+      width: 100%
+      padding: 6px 10px
+      border: 1px solid rgba($accent, 0.15)
+      background: rgba($accent, 0.04)
+      color: $ink
+      font-size: 0.85rem
+      cursor: pointer
+      transition: all 0.2s ease
+
+      i
+        color: $accent
+        width: 14px
+        text-align: center
 
       &:hover
+        background: rgba($accent, 0.08)
+        border-color: $accent
+
+      &.playing
+        background: rgba($accent, 0.08)
+        border-color: $accent
+
+    // 歌曲名 tooltip
+    #pet-music-tooltip
+      margin-top: 6px
+      padding: 4px 8px
+      font-size: 0.75rem
+      color: $ink
+      background: rgba($accent, 0.04)
+      border: 1px solid rgba($accent, 0.1)
+      display: flex
+      align-items: center
+      gap: 4px
+
+      i
         color: $accent
+        font-size: 0.7rem
+        flex-shrink: 0
 
-  .music-body
-    iframe
-      width: 100%
-      height: 66px
-      display: block
+      .song-name
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
 
-@keyframes music-slide-in
+// ===========================================
+//  隐藏音乐播放器
+// ===========================================
+#pet-music-audio
+  position: absolute
+  width: 0
+  height: 0
+  overflow: hidden
+
+@keyframes pet-hop
+  0%
+    transform: translateY(0) scale(1, 1)
+  20%
+    transform: translateY(-20px) scale(0.95, 1.1)
+  40%
+    transform: translateY(0) scale(1.05, 0.95)
+  60%
+    transform: translateY(-8px) scale(1, 1)
+  80%
+    transform: translateY(0) scale(1.02, 0.98)
+  100%
+    transform: translateY(0) scale(1, 1)
+
+@keyframes pet-breathe
+  0%, 100%
+    transform: scale(1)
+  50%
+    transform: scale(1.02)
+
+@keyframes pet-bubble-in
   from
     opacity: 0
-    transform: translateY(12px) scale(0.95)
+    transform: translateX(-50%) translateY(4px)
   to
     opacity: 1
-    transform: translateY(0) scale(1)
-
-@keyframes music-pulse
-  0%, 100%
-    box-shadow: 0 2px 8px rgba($accent, 0.3)
-  50%
-    box-shadow: 0 2px 16px rgba($accent, 0.6)
+    transform: translateX(-50%) translateY(0)
 
 // ===========================================
 //  滚动条

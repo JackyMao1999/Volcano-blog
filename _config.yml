@@ -2,11 +2,11 @@
 # Docs: https://hexo.io/docs/configuration.html
 
 # Site
-title: JackyMao's Page
+title: Kai Mao's Page
 subtitle: 锡城小凯的博客
-description: JackyMao's Page - 代码与魔法的交汇处
+description: Kai Mao's Page - 代码与魔法的交汇处
 keywords: Python, JavaScript, Blog, 编程, 技术
-author: JackyMao
+author: Kai Mao
 language: zh-CN
 timezone: Asia/Shanghai
 
@@ -82,6 +82,17 @@ ignore:
 
 # Extensions
 theme: volantis
+
+# Markdown
+marked:
+  smartypants: false
+
+# RSS Feed
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
 
 # Deployment
 deploy:

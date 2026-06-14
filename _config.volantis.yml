@@ -19,7 +19,7 @@ navbar:
   logo:
     img: false
     icon: fa-solid fa-feather-alt
-    title: JackyMao
+    title: Kai Mao
   menu:
     - name: 首页
       icon: fa-solid fa-home
@@ -43,11 +43,11 @@ cover:
   height_scheme: full
   layout_scheme: dock
   display:
-    home: true
+    home: false
     archive: false
     others: false
-  background: https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1920&h=1080&auto=format&fit=crop
-  title: JackyMao's Page
+  background: 
+  title: Kai Mao
   subtitle: 书写代码，记录思考
   search: 探寻古老的知识...
   features:
@@ -166,14 +166,14 @@ sidebar:
       avatar: https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f9d9.png
       shape: circle
       url: /about/
-      title: JackyMao
+      title: Kai Mao
       subtitle: 书写者 · 思考者
       jinrishici: 纸上得来终觉浅
       social:
         - icon: fab fa-github
           url: https://github.com/JackyMao1999
         - icon: fa-solid fa-envelope
-          url: mailto:me@jackymao.com
+          url: mailto:837002144@qq.com
         - icon: fa-solid fa-rss
           url: /atom.xml
     toc:
