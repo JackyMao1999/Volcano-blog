@@ -8,7 +8,7 @@ categories:
 cover:
 ---
 
-欢迎来到 **JackyMao's Page**！
+欢迎来到 **Kai Mao's Page**！
 
 这是我的第一篇博客，一个新的开始。这里将记录我在编程世界中的冒险故事、学习心得和一些有趣的项目。
 

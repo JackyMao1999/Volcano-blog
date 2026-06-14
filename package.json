@@ -2,8 +2,8 @@
   "name": "jackymao-blog",
   "version": "1.0.0",
   "private": true,
-  "description": "JackyMao's Blog - 西幻风个人博客",
-  "author": "JackyMao",
+  "description": "Kai Mao's Blog - 西幻风个人博客",
+  "author": "Kai Mao",
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
