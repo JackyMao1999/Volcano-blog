@@ -1,7 +1,6 @@
 ---
 title: Hello, 魔法世界
 tags:
-  - Hexo
   - 博客
 categories:
   - 杂谈

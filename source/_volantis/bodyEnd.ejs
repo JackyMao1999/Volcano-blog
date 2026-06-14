@@ -1,15 +1,3 @@
-<style>
-/* 非封面页：导航栏始终可见 */
-#l_body:not(:has(#cover)) ~ #l_header.auto {
-  opacity: 1 !important;
-  pointer-events: auto !important;
-}
-/* 封面页：完全隐藏导航栏 */
-#l_body:has(#cover) ~ #l_header {
-  display: none !important;
-}
-</style>
-
 <div id="pet-rabbit">
   <div class="pet-body">
     <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
@@ -58,6 +46,18 @@
 
 <script>
 (function() {
+  // --- 导航栏：封面页隐藏，其他页始终显示 ---
+  var header = document.getElementById('l_header');
+  if (header) {
+    var cover = document.getElementById('cover');
+    if (cover) {
+      header.style.display = 'none';
+    } else {
+      header.style.opacity = '1';
+      header.style.pointerEvents = 'auto';
+    }
+  }
+
   var SONG_ID = '1836021414';
   var SONG_NAME = '黄金时代';
   var SONG_ARTIST = '声音碎片乐队';
