@@ -46,16 +46,10 @@
 
 <script>
 (function() {
-  // --- 导航栏：封面页隐藏，其他页始终显示 ---
+  // --- 封面页隐藏导航栏 ---
   var header = document.getElementById('l_header');
-  if (header) {
-    var cover = document.getElementById('cover');
-    if (cover) {
-      header.style.display = 'none';
-    } else {
-      header.style.opacity = '1';
-      header.style.pointerEvents = 'auto';
-    }
+  if (header && document.getElementById('cover')) {
+    header.style.display = 'none';
   }
 
   var SONG_ID = '1836021414';

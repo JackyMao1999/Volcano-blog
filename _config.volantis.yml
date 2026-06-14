@@ -15,7 +15,7 @@ csp:
 
 # =============================== 导航栏 ===============================
 navbar:
-  visiable: auto
+  visiable: always
   logo:
     img: false
     icon: fa-solid fa-feather-alt
