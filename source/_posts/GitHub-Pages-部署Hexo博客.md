@@ -210,7 +210,7 @@ git push -u origin main
 1. 进入仓库 **Settings → Pages**
 2. **Source** 选择 **GitHub Actions**
 3. 等待 Actions 运行完成，访问提供的 URL 即可看到博客
-![image](GitHub-Pages-部署Hexo博客/1.png)
+{% asset_img 1.png 部署流程 %}
 
 ---
 

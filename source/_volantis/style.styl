@@ -86,59 +86,63 @@ html
 .article-title
   color: $ink-dark !important
 
-.post-article, .post
-  .article-entry
-    font-size: 1.1rem
-    line-height: 1.8
-    color: $ink
+// ===========================================
+//  文章正文
+// ===========================================
+#post-body
+  font-size: 1.1rem
+  line-height: 1.8
+  color: $ink
 
-    h1, h2, h3, h4, h5, h6
-      color: $ink-dark !important
+  h1, h2, h3, h4, h5, h6
+    color: $ink-dark !important
 
-    h2
-      border-bottom: 1px solid rgba($ink, 0.1)
-      padding-bottom: 8px
+  h2
+    border-bottom: 1px solid rgba($ink, 0.1)
+    padding-bottom: 8px
 
-    a
-      color: $link !important
-      text-decoration: none
-      border-bottom: 1px dotted rgba($link, 0.3)
-      transition: color 0.2s ease
+  a
+    color: $link !important
+    text-decoration: none
+    border-bottom: 1px dotted rgba($link, 0.3)
+    transition: color 0.2s ease
 
-      &:hover
-        color: darken($link, 15%) !important
-        border-bottom-color: $link
+    &:hover
+      color: darken($link, 15%) !important
+      border-bottom-color: $link
 
-    blockquote
-      border-left: 3px solid $accent
-      background: rgba($accent, 0.04)
-      padding: 12px 20px
-      font-style: italic
-      color: $ink-muted
+  blockquote
+    border-left: 3px solid $accent
+    background: rgba($accent, 0.04)
+    padding: 12px 20px
+    font-style: italic
+    color: $ink-muted
 
-    pre
-      background: #2c1e10 !important
-      border: none
-      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2)
+  pre
+    background: #2c1e10 !important
+    border: none
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2)
 
-    code
-      color: $accent-hover
+  pre code
+    color: #e0e0e0
 
-    img
+  img
+    border: 1px solid rgba($ink, 0.08)
+
+  table
+    border-collapse: collapse
+    width: 100%
+
+    th
+      background: rgba($ink, 0.06)
+      color: $ink-dark
+      border-bottom: 2px solid rgba($ink, 0.15)
+
+    td, th
       border: 1px solid rgba($ink, 0.08)
+      padding: 8px 12px
 
-    table
-      border-collapse: collapse
-      width: 100%
-
-      th
-        background: rgba($ink, 0.06)
-        color: $ink-dark
-        border-bottom: 2px solid rgba($ink, 0.15)
-
-      td, th
-        border: 1px solid rgba($ink, 0.08)
-        padding: 8px 12px
+// 行内代码保持主题默认颜色，多行代码块用浅色
 
 // ===========================================
 //  侧边栏
