@@ -24,7 +24,7 @@
       <line x1="72" y1="55" x2="90" y2="52" stroke="#5C4018" stroke-width="0.6"/>
       <line x1="72" y1="57" x2="92" y2="58" stroke="#5C4018" stroke-width="0.6"/>
     </svg>
-    <div class="pet-name">小糯米</div>
+    <div class="pet-name">彪子</div>
   </div>
   <div class="pet-bubble" hidden></div>
 
@@ -75,13 +75,13 @@
     say(msgs[Math.floor(Math.random() * msgs.length)]);
   });
   setInterval(function() {
-    if (Math.random() > 0.7) {
+    if (Math.random() > 0.45) {
       pet.classList.remove('pet-ear-twitch');
       void pet.offsetWidth;
       pet.classList.add('pet-ear-twitch');
-      setTimeout(function() { pet.classList.remove('pet-ear-twitch'); }, 500);
+      setTimeout(function() { pet.classList.remove('pet-ear-twitch'); }, 350);
     }
-  }, 4000);
+  }, 2500);
 
   // --- 音乐 ---
   var musicBtn = document.getElementById('pet-music-btn');

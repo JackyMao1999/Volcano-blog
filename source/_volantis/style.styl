@@ -308,10 +308,10 @@ html
       transform-origin: center bottom
 
   &.pet-ear-twitch .ear-left
-    transform: rotate(-25deg) !important
+    animation: ear-twitch-left 0.35s ease-in-out
 
   &.pet-ear-twitch .ear-right
-    transform: rotate(25deg) !important
+    animation: ear-twitch-right 0.35s ease-in-out
 
   &.pet-hop .pet-body
     animation: pet-hop 0.5s ease
@@ -423,6 +423,26 @@ html
   width: 0
   height: 0
   overflow: hidden
+
+@keyframes ear-twitch-left
+  0%, 100%
+    transform: rotate(-15deg)
+  25%
+    transform: rotate(-35deg)
+  50%
+    transform: rotate(-20deg)
+  75%
+    transform: rotate(-35deg)
+
+@keyframes ear-twitch-right
+  0%, 100%
+    transform: rotate(15deg)
+  25%
+    transform: rotate(35deg)
+  50%
+    transform: rotate(20deg)
+  75%
+    transform: rotate(35deg)
 
 @keyframes pet-hop
   0%
